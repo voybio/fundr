@@ -200,10 +200,8 @@ st.markdown(
     }
     .block-container {
         max-width: 100%;
-        padding: 2rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-        margin: 1rem auto; /* Center the block container */
+        padding: 2rem !important;
+        background-color: #f8f9fa !important;
     }
     h1, h2, h3 {
         font-weight: 750;
@@ -222,11 +220,10 @@ st.markdown(
         text-decoration: underline;
     }
     .element-container {
-        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.07);
         border-radius: 0.25rem;
         padding: 0.5rem;
         background-color: #fff;
-        margin-bottom: 0.5rem; /* Add some spacing between elements */
+        margin-bottom: 0.5rem;
     }
     .stButton>button {
         color: #fff;
@@ -237,20 +234,21 @@ st.markdown(
         cursor: pointer;
         transition: background-color 0.3s ease;
         font-size: 1rem;
-        display: block; /* Make buttons full width */
-        width: 100%; /* Ensure full width */
-        margin-bottom: 0.5rem; /* Add spacing below buttons */
+        max-width: 300px;
+        display: block;
+        margin: 0 auto 0.5rem auto;
     }
     .stButton>button:hover {
         background-color: #0056b3;
     }
-    audio {
-        width: 100%;
-        margin-top: 0.5rem;
-    }
-    /* Fix for overlapping elements */
     .stRadio, .stSelectbox, .stTextInput {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem !important;
+    }
+    iframe {
+        width: 100%;
+        height: 100vh;
+        border: none;
+        position: relative;
     }
     </style>
     """,
