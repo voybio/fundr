@@ -1,0 +1,14 @@
+streamlit
+duckdb
+pandas
+xml2db
+streamlit-timeline
+streamlit-advanced-audio
+datetime
+markdownify
+sumy
+google-genai
+google-cloud-texttospeech
+lxml_html_clean
+nltk
+
