@@ -116,12 +116,13 @@ def top_10_agencies_by_count(df):
     freq_df.columns = ["AgencyName", "Frequency"]
     return freq_df.head(10)
 
-def download_and_extract_xml(st, grants_xml_data=None):
+def download_and_extract_xml(st, base_zip_url="https://prod-grants-gov-chatbot.s3.amazonaws.com/extracts/GrantsDBExtractYYYYMMDDv2.zip", grants_xml_data=None):
     """
     Downloads and extracts the Grants.gov XML data from a zip file, returning bytes.
 
     Args:
         st: Streamlit object for UI elements.
+        base_zip_url (str, optional): The base URL for the zip file. Defaults to GrantsDBExtractYYYYMMDDv2.zip
         grants_xml_data (bytes, optional): If already available, pass it.
     Returns:
         bytes: The raw XML data or None if an error occurred.
@@ -132,7 +133,7 @@ def download_and_extract_xml(st, grants_xml_data=None):
 
     # Otherwise attempt to download from the URL
     today = datetime.today().strftime("%Y%m%d")
-    zip_url = f"https://prod-grants-gov-chatbot.s3.amazonaws.com/extracts/GrantsDBExtract{today}v2.zip"
+    zip_url = base_zip_url.replace("YYYYMMDD", today)
 
     try:
         response = requests.get(zip_url)
